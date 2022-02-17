@@ -1,11 +1,14 @@
 name: PR Title Check
 
 on:
-  pull_request:
-    types:
-      - opened
-      - reopened
-      - edited
+  workflow_call:
+    inputs:
+      pr-num:
+        required: true
+        type: number
+      pr-title:
+        required: true
+        type: string
 
 permissions:
   contents: none
@@ -18,8 +21,8 @@ jobs:
     steps:
       - name: Check length
         env:
-          PR_NUM: ${{ github.event.pull_request.number }}
-          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_NUM: ${{ inputs.pr-num }}
+          PR_TITLE: ${{ inputs.pr-title }}
         run: |
           if [ $(echo -n "${PR_TITLE} (#${PR_NUM})" | wc -c) -gt 72 ]
           then
