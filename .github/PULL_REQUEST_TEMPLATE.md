@@ -3,4 +3,4 @@ Please provide a short description to your fellow developers about the "why" of 
 Q   |   A
 ------|-------
 Type |    Addition/Change/Removal/Fix/Tidy/Security
-Trello | <https://trello.com/c/xyz/123-a-card-example>
+Jira | <https://amara-living.atlassian.net/browse/ADPV-XX>
